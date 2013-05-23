@@ -27,28 +27,28 @@ require_once 'abstract.php';
 class YaBOB_Shell_Newaccount extends YaBOB_Shell_Abstract
 {
 	/**
-     * Run script
-     *
-     */
-    public function run()
-    {
-    	$user = $this->getArg('user');
-    	$pass = $this->getArg('pass');
-    	$email = $this->getArg('email');
-    	
-    	if($user && $pass && $email){
-	    	$this->new_account($user, $pass, $email, $this->getArg('sex'), $this->getArg('server'));
-    	}else{
-	    	echo $this->usageHelp();
-    	}
-    }
-    
-    protected function new_account($user, $pass, $email, $sex=false, $server=false){
-	    $url = 'aHR0cDovL3d3dy5ldm9ueS5jb20vaW5kZXguZG8/UGFnZU1vZHVsZT1MZHBBY3Rpb24mbWV0aG9kPVVzZXJzUmVnTmV3JnJlZmVyX3VybD0=';
-	    
-	    $sex = !$sex ? '0' : $sex ;
+	 * Run script
+	 *
+	 */
+	public function run()
+	{
+		$user = $this->getArg('user');
+		$pass = $this->getArg('pass');
+		$email = $this->getArg('email');
+
+		if($user && $pass && $email){
+			$this->new_account($user, $pass, $email, $this->getArg('sex'), $this->getArg('server'));
+		}else{
+			echo $this->usageHelp();
+		}
+	}
+
+	protected function new_account($user, $pass, $email, $sex=false, $server=false){
+		$url = 'aHR0cDovL3d3dy5ldm9ueS5jb20vaW5kZXguZG8/UGFnZU1vZHVsZT1MZHBBY3Rpb24mbWV0aG9kPVVzZXJzUmVnTmV3JnJlZmVyX3VybD0=';
+
+		$sex = !$sex ? '0' : $sex ;
 		$server = !$server ? 'ss1' : $server;
-		
+
 		$fields = array(
 			'king'=>urlencode($user),
 			'username'=>urlencode($email),
@@ -56,29 +56,29 @@ class YaBOB_Shell_Newaccount extends YaBOB_Shell_Abstract
 			'sex'=>urlencode($sex),
 			'pwd2'=>urlencode($pass),
 		);
-		
-    }
-    
-    /**
-     * Retrieve Usage Help Message
-     *
-     */
-    public function usageHelp()
-    {
-        return <<<USAGE
+
+	}
+
+	/**
+	 * Retrieve Usage Help Message
+	 *
+	 */
+	public function usageHelp()
+	{
+		return <<<USAGE
 Usage:  php -f newaccount.php -- [options]
 
   --user <username>             Username on game server
   --pass <password>             Password for global login
   --sex <user_sex>              Sex Male 0 / Female 1 (0 default)
   --email <email_address>       Email address global login
-  --server <server>             Game Server (ss1 default) 
-  
+  --server <server>             Game Server (ss1 default)
+
   help                          This help
 
 
 USAGE;
-    }
+	}
 
 
 }
