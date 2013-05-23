@@ -39,11 +39,24 @@ class YaBOB_Shell_Newaccount extends YaBOB_Shell_Abstract
     	$server = $this->getArg('server');
     	
     	if($user && $pass && $email){
-	    	echo $user;
 	    	
     	}else{
 	    	echo $this->usageHelp();
     	}
+    }
+    
+    protected function new_account($user, $pass, $email, $sex=0, $server='ss1'){
+	    $url = 'aHR0cDovL3d3dy5ldm9ueS5jb20vaW5kZXguZG8/UGFnZU1vZHVsZT1MZHBBY3Rpb24mbWV0aG9kPVVzZXJzUmVnTmV3JnJlZmVyX3VybD0=';
+	    
+		$fields = array(
+			'king'=>urlencode($user),
+			'username'=>urlencode($email),
+			'pwd'=>urlencode($pass),
+			'sex'=>urlencode($sex),
+			'pwd2'=>urlencode($pass),
+		);
+		
+		
     }
     
     /**
