@@ -7,3 +7,12 @@
 > YaBOB will be an attempt to move away from Flex & Zinc.
 
 **Note:** YaBOB is in very early development stages thus the core functions file wont be included as of yet.
+
+## Requirements
+
+| Required      | Min. Version |
+|---------------|:------------:|
+| php           | 5.4          |
+| php-curl      | 7.24.0       |
+| php-amf       | 1.2.1        |
+
