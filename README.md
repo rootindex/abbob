@@ -11,7 +11,7 @@
 ## Requirements
 
 | Required      | Min. Version | Location                         |
-|---------------|:------------:|----------------------------------|
+|---------------|:------------:|:---------------------------------|
 | php           | 5.4          | http://www.php.net/downloads.php |
 | php-curl      | 7.24.0       | http://curl.haxx.se/libcurl/php/ |
 | php-amf3      | 1.2.1        | http://neoxic.me/php-amf3/       |
