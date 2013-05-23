@@ -100,7 +100,7 @@ Usage:  php -f newaccount.php -- [options]
   --pass <password>             Password for global login
   --sex <user_sex>              Sex Male 0 / Female 1 (0 default)
   --email <email_address>       Email address global login
-  --server <server>             Game Server (ss1 default)
+  --server <server>             Game Server (na1 default)
 
   help                          This help
 
