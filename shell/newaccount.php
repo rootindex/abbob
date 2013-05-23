@@ -37,13 +37,13 @@ class YaBOB_Shell_Newaccount extends YaBOB_Shell_Abstract
         $email = $this->getArg('email');
 
         if($user && $pass && $email){
-            $this->new_account($user, $pass, $email, $this->getArg('sex'), $this->getArg('server'));
+            $this->_new_account($user, $pass, $email, $this->getArg('sex'), $this->getArg('server'));
         }else{
             echo $this->usageHelp();
         }
     }
 
-    protected function new_account($user, $pass, $email, $sex=false, $server=false){
+    protected function _new_account($user, $pass, $email, $sex=false, $server=false){
         $url = 'aHR0cDovL3d3dy5ldm9ueS5jb20vaW5kZXguZG8/UGFnZU1vZHVsZT1MZHBBY3Rpb24mbWV0aG9kPVVzZXJzUmVnTmV3JnJlZmVyX3VybD0=';
 
         $sex = !$sex ? '0' : $sex ;
